@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale V1.0">
+    <title>SINJI BUG WHATSAPP BY NEZA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff0000, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card h2 {
+            margin-bottom: 20px;
+            color: #ff6b6b;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h2 i {
+            margin-right: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #ddd;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+        }
+        
+        .bug-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .bug-option {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .bug-option:hover {
+            background: rgba(255, 107, 107, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+        }
+        
+        .bug-option.selected {
+            background: rgba(255, 107, 107, 0.3);
+            border-color: #ff6b6b;
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .bug-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ff6b6b;
+        }
+        
+        .bug-desc {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #ff0000, #ff6b6b);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        
+        .btn-disabled:hover {
+            transform: none;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .developer-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .developer-contact, .developer-channel {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .developer-contact h3, .developer-channel h3 {
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #ff6b6b;
+        }
+        
+        .warning {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid #ff6b6b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+            }
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .spinner {
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 5px solid #ff6b6b;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .result {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .bug-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .developer-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WhatsApp Bug Generator</h1>
+            <p class="subtitle">Alat untuk menguji kerentanan WhatsApp</p>
+        </header>
+        
+        <div class="card">
+            <h2><i>📱</i> Target WhatsApp</h2>
+            <div class="form-group">
+                <label for="phone">Nomor WhatsApp Target (contoh: 085xxx)</label>
+                <input type="text" id="phone" placeholder="Masukkan nomor WhatsApp target">
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><i>⚙️</i> Pilih Fitur Bug</h2>
+            <div class="bug-options">
+                <div class="bug-option" data-bug="fclose">
+                    <div class="bug-name">FCLOSE</div>
+                    <div class="bug-desc">Force Close aplikasi WhatsApp</div>
+                </div>
+                <div class="bug-option" data-bug="fc-invis">
+                    <div class="bug-name">FC-INVIS</div>
+                    <div class="bug-desc">Force Close dengan mode invisible</div>
+                </div>
+                <div class="bug-option" data-bug="crash">
+                    <div class="bug-name">CRASH</div>
+                    <div class="bug-desc">Membuat aplikasi crash</div>
+                </div>
+                <div class="bug-option" data-bug="delayinvis">
+                    <div class="bug-name">DELAYINVIS</div>
+                    <div class="bug-desc">Delay dengan mode invisible</div>
+                </div>
+                <div class="bug-option" data-bug="delaymaker">
+                    <div class="bug-name">DELAYMAKER</div>
+                    <div class="bug-desc">Membuat delay pada aplikasi</div>
+                </div>
+                <div class="bug-option" data-bug="delayip">
+                    <div class="bug-name">DELAYIP</div>
+                    <div class="bug-desc">Delay dengan manipulasi IP</div>
+                </div>
+                <div class="bug-option" data-bug="forceclose">
+                    <div class="bug-name">FORCECLOSE</div>
+                    <div class="bug-desc">Force close aplikasi dengan paksa</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="warning">
+            <strong>PERINGATAN:</strong> Alat ini hanya untuk tujuan pengujian keamanan. Penggunaan untuk aktivitas ilegal adalah tanggung jawab pengguna.
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Mengirim bug ke target...</p>
+        </div>
+        
+        <div class="result" id="result">
+            <h3>Bug Berhasil Dikirim!</h3>
+            <p>Bug telah berhasil dikirim ke nomor target. Tunggu beberapa saat untuk melihat efeknya.</p>
+        </div>
+        
+        <button class="btn pulse" id="sendBtn">KIRIM BUG KE TARGET</button>
+        
+        <div class="developer-info">
+            <div class="developer-contact">
+                <h3><i>👨‍💻</i> Kontak Developer</h3>
+                <div class="contact-info">
+                    <i>📞</i> <span>085760854726</span>
+                </div>
+                <p>Hubungi developer untuk pertanyaan atau bantuan teknis.</p>
+            </div>
+            
+            <div class="developer-channel">
+                <h3><i>📢</i> Saluran Developer</h3>
+                <a href="https://whatsapp.com/channel/0029VbAaWheJZg42G67Yw033" class="btn" target="_blank">Kunjungi Saluran</a>
+                <p>Ikuti saluran developer untuk update terbaru.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bugOptions = document.querySelectorAll('.bug-option');
+            const phoneInput = document.getElementById('phone');
+            const sendBtn = document.getElementById('sendBtn');
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+            
+            let selectedBug = null;
+            
+            // Pilih bug
+            bugOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    bugOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedBug = this.getAttribute('data-bug');
+                    
+                    // Update button
+                    updateSendButton();
+                });
+            });
+            
+            // Update button berdasarkan input
+            phoneInput.addEventListener('input', updateSendButton);
+            
+            function updateSendButton() {
+                if (phoneInput.value.trim() !== '' && selectedBug !== null) {
+                    sendBtn.classList.remove('btn-disabled');
+                    sendBtn.disabled = false;
+                } else {
+                    sendBtn.classList.add('btn-disabled');
+                    sendBtn.disabled = true;
+                }
+            }
+            
+            // Kirim bug
+            sendBtn.addEventListener('click', function() {
+                if (phoneInput.value.trim() === '' || selectedBug === null) {
+                    alert('Harap masukkan nomor target dan pilih jenis bug!');
+                    return;
+                }
+                
+                // Tampilkan loading
+                loading.style.display = 'block';
+                result.style.display = 'none';
+                
+                // Simulasi proses pengiriman bug
+                setTimeout(function() {
+                    loading.style.display = 'none';
+                    result.style.display = 'block';
+                    
+                    // Scroll ke hasil
+                    result.scrollIntoView({ behavior: 'smooth' });
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
